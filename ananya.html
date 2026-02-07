@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffe6eb, #fff);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 330px;
+    position: relative;
+}
+
+.card img {
+    width: 140px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    position: relative;
+    height: 120px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#no {
+    background: #ccc;
+    color: #333;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+}
+
+/* Flower animation */
+.flower {
+    position: absolute;
+    width: 60px;
+    animation: pop 1.8s ease-out forwards;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0) translateY(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2) translateY(-120px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-200px);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+    <!-- Proposal Image -->
+     <img src="WhatsApp Image 2026-02-04 at 22.53.07 (1).jpeg">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="heart">
+    <img src="WhatsApp Image 2026-02-04 at 22.53.07.jpeg">
+    <img src="WhatsApp Image 2026-02-04 at 22.53.08.jpeg">
+
+    <h1>Ananya ❤️</h1>
+    <p>Will you be my Valentine?</p>
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">Yes 💖</button>
+        <button id="no">No 😅</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 80 - 40;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+function yesClicked() {
+    document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            width:100%;
+            background:linear-gradient(135deg,#ffccd5,#fff);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            position:relative;
+            overflow:hidden;
+            font-family:Poppins;
+        ">
+            <h1 style="color:#ff4d6d;font-size:42px;">She Said YES 🌸💖</h1>
+            <p style="font-size:22px;">If loving you means becoming better, then I promise — every change I make will carry respect, care, and love, only for you. Best Valentine Ever 😍</p>
+        </div>
+    `;
+
+    // Flower pop-up effect
+    for (let i = 0; i < 12; i++) {
+        createFlower();
+    }
+}
+
+function createFlower() {
+    const flower = document.createElement("img");
+    flower.src = "https://cdn-icons-png.flaticon.com/512/765/765613.png";
+    flower.className = "flower";
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.bottom = "0px";
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 1800);
+}
+</script>
+
+</body>
+</html>

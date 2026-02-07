@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<title>Bhavya, My Favorite Person 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffd6e8; 
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      text-emphasis: Cuteeii;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #e91e63;
+    }
+
+    h2 {
+      color: #ff4081;
+      margin-bottom: 25px;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .plan {
+      text-align: left;
+      margin: 25px 0;
+      font-size: 18px;
+    }
+
+    .plan li {
+      margin: 10px 0;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      position: relative;
+      height: 120px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background: #e91e63;
+      color: white;
+      box-shadow: 0 6px 15px rgba(233,30,99,0.4);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: #f8bbd0;
+      color: #880e4f;
+      position: absolute;
+      left: 55%;
+      top: 0;
+    }
+
+    .final {
+      display: none;
+      margin-top: 30px;
+      font-size: 22px;
+      color: #e91e63;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="Piche Tere Kunwarr (pagalall.com).mp3" >
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>Hey Bhavya!! My Favorite Person 💖</h1>
+   <h2>Will you join me in turning this February into a week of shared meals, laughter, and little memories?</h2>
+
+
+    <!-- Optional Image -->
+    <img src="WhatsApp Image 2026-02-04 at 00.30.17.jpeg" alt="Bhavya" class="bhavya-img">
+    <img src="WhatsApp Image 2026-02-04 at 01.24.18.jpeg">
+    <img src="WhatsApp Image 2026-02-04 at 01.29.24.jpeg">
+ 
+    
+
+    <ul class="plan">
+      <li>🌹 <strong>7 Feb:</strong> Pav Bhaji</li>
+      
+      <li>🥟 <strong>8 Feb:</strong> Momos</li>
+      <li>🍕 <strong>9 Feb:</strong> Pizza</li>
+      <li>💥 <strong>10 Feb:</strong> Gol Gappe</li>
+      <li>🧇 <strong>11 Feb:</strong> Waffles</li>
+      <li>🍣 <strong>12 Feb:</strong> Sushi</li>
+      <li>🥞 <strong>13 Feb:</strong> Dosa</li>
+      <li>❤️ <strong>14 Feb:</strong> Something interesting… like <i><b>to buy some lip gloss for you 😉.</b></i></li>
+    </ul>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="sayYes()">YES 💕</button>
+      <button id="noBtn" onmouseover="moveNo()">NO 🙈</button>
+    </div>
+
+   <div class="final" id="finalMsg">
+  Yayyy! 💃💖  
+  I’m so excited to spend this beautiful week with you, Bhavya 🥰
+</div>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("noBtn");
+      const x = Math.random() * 60;
+      const y = Math.random() * 60;
+      noBtn.style.left = x + "%";
+      noBtn.style.top = y + "px";
+    }
+
+    function sayYes() {
+      document.getElementById("finalMsg").style.display = "block";
+      document.getElementById("bgMusic").play();
+    }
+  </script>
+
+</body>
+</html>
